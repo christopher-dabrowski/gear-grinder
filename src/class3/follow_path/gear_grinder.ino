@@ -1,3 +1,5 @@
+#define ENGINE_BALANCING_DECREASE 4
+
 void initRobot() {
   pinMode(D1, OUTPUT); // wł. i wył. prawego silnika
   pinMode(D2, OUTPUT); // wł. i wył. lewego silnika
@@ -5,18 +7,18 @@ void initRobot() {
   pinMode(D4, OUTPUT); // wybór kierunku lewego silnika
 }
 void goFoward(int czas, int predkosc) {
-  digitalWrite(D3, HIGH);    // jazda przód
-  digitalWrite(D4, HIGH);    // jazda przód
-  analogWrite(D1, predkosc); // wolna jazda
-  analogWrite(D2, predkosc); // wolna jazda
+  digitalWrite(D3, HIGH);                                // jazda przód
+  digitalWrite(D4, HIGH);                                // jazda przód
+  analogWrite(D1, predkosc);                             // wolna jazda
+  analogWrite(D2, predkosc - ENGINE_BALANCING_DECREASE); // wolna jazda
   delay(czas);
   stopEngine();
 }
 void goBack(int czas, int predkosc) {
-  digitalWrite(D3, LOW);     // jazda tył
-  digitalWrite(D4, LOW);     // jazda tył
-  analogWrite(D1, predkosc); // wolna jazda
-  analogWrite(D2, predkosc); // wolna jazda
+  digitalWrite(D3, LOW);                                 // jazda tył
+  digitalWrite(D4, LOW);                                 // jazda tył
+  analogWrite(D1, predkosc);                             // wolna jazda
+  analogWrite(D2, predkosc - ENGINE_BALANCING_DECREASE); // wolna jazda
   delay(czas);
   stopEngine();
 }
