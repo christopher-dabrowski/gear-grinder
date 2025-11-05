@@ -26,5 +26,8 @@ Thumbs.db
 ## Local History for Visual Studio Code
 .history/
 
+# Visual Studio
+.vs/
+
 # Logs
 **/*.log
