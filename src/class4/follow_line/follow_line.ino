@@ -1,4 +1,4 @@
-#define SPEED 200
+#define SPEED 220
 #define FORWARD_TIME 50
 
 #define TURN_SPEED 255
