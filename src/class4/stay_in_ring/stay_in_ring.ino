@@ -1,4 +1,4 @@
-#define SPEED 220
+#define SPEED 200
 #define FORWARD_TIME 50
 
 #define TURN_SPEED 255
@@ -11,13 +11,23 @@ void setup() {
   initRobot();
   sensorRightLeftInit();
 }
+// bool done = false;
 void loop() {
   int czujnikPrawy = sensorRight();
   int czujnikLewy = sensorLeft();
 
-  if (czujnikPrawy == BLACK && czujnikLewy == BLACK) {
+  // if (done) {
+  //   delay(1000);
+  //   return;
+  // }
+
+  // turnRight(800, 255);
+  // done = true;
+  // return;
+
+  if (czujnikPrawy == BLACK || czujnikLewy == BLACK) {
     // try to turn back
-    turnRight(300, 255);
+    turnRight(800, 255);
     return;
   }
   if ((czujnikPrawy == WHITE) && (czujnikLewy == WHITE)) {
