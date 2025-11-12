@@ -1,8 +1,8 @@
-#define SPEED = 200;
-#define FORWARD_TIME = 50;
+#define SPEED 200
+#define FORWARD_TIME 50
 
-#define TURN_SPEED = 255;
-#define TURN_TIME = 50;
+#define TURN_SPEED 255
+#define TURN_TIME 50
 
 void setup() {
   initRobot();
