@@ -1,11 +1,14 @@
 #include <hcsr04.h>
 
-#define RIGHT_LINE_SENSOR_PIN D5
+#define RIGHT_LINE_SENSOR_PIN D7
 #define LEFT_LINE_SENSOR_PIN D8
+
+#define TRIG_PIN D6
+#define ECHO_PIN D5
 
 #define ENGINE_BALANCING_DECREASE 15
 
-HCSR04 hcsr04(D6, D5, 20, 4000);
+HCSR04 hcsr04(TRIG_PIN, ECHO_PIN, 20, 4000);
 
 int sensorDistanceRead() { return hcsr04.distanceInMillimeters(); }
 

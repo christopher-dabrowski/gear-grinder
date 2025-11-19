@@ -7,7 +7,13 @@ void loop() {
   Serial.print(sensorLeft());
   Serial.print("     prawy=");
   Serial.println(sensorRight());
-  delay(100);
+
+  // Serial.println(hcsr04.ToString());
+
+  Serial.print("dystans (mm)=");
+  Serial.println(sensorDistanceRead());
+
+  delay(500);
 
   // int pomiarOdległosci = sensorDistanceRead();
   // if (pomiarOdległosci > 250) {
