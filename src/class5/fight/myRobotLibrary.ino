@@ -8,9 +8,12 @@
 
 #define ENGINE_BALANCING_DECREASE 15
 
-HCSR04 hcsr04(TRIG_PIN, ECHO_PIN, 20, 4000);
+HCSR04 *hcsr04;
 
-int sensorDistanceRead() { return hcsr04.distanceInMillimeters(); }
+int sensorDistanceRead() {
+  return hcsr04->distanceInMillimeters();
+  return 500;
+}
 
 void sensorRightLeftInit() {
   pinMode(RIGHT_LINE_SENSOR_PIN, INPUT);
@@ -23,6 +26,8 @@ void initRobot() {
   pinMode(D3, OUTPUT);
   pinMode(D4, OUTPUT);
   sensorRightLeftInit();
+
+  hcsr04 = new HCSR04(TRIG_PIN, ECHO_PIN, 20, 4000);
 }
 
 void goFoward(int czas, int predkosc) {
