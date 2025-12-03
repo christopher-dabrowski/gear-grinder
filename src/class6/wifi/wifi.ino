@@ -1,3 +1,4 @@
+#include "./secrets.h"
 #include <ESP8266WebServer.h>
 #include <ESP8266WiFi.h>
 
@@ -36,7 +37,7 @@ void setup() {
   car_control(); // stop the car
 
   WiFi.mode(WIFI_AP);
-  WiFi.softAP(ssid);
+  WiFi.softAP(ssid, WIFI_PASSWORD);
 
   IPAddress myIP = WiFi.softAPIP();
   Serial.print("AP IP address: ");
